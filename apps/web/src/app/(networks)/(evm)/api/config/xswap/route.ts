@@ -6,11 +6,21 @@ const schema = z.object({
   maintenance: z.boolean(),
 })
 
-// export const runtime = 'edge'
-
+export const runtime = 'edge'
 export const revalidate = 60
 
 export async function GET() {
-  const data = await get('xswap')
-  return NextResponse.json(schema.safeParse(data))
+  try {
+    const data = await get('xswap')
+    const result = schema.safeParse(data)
+    
+    if (!result.success) {
+      return NextResponse.json({ success: false, error: 'Invalid config data' }, { status: 500 })
+    }
+    
+    return NextResponse.json(result.data)
+  } catch (error) {
+    console.error('Error fetching xswap config:', error)
+    return NextResponse.json({ success: false, error: 'Failed to fetch config' }, { status: 500 })
+  }
 }
