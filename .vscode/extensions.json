@@ -1,10 +1,7 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "heybourn.headwind",
-    "bradlc.vscode-tailwindcss",
-    "VisualStudioExptTeam.vscodeintellicode",
-    "GraphQL.vscode-graphql",
-    "biomejs.biome"
-  ]
+    "recommendations": [
+        "myml.vscode-markdown-plantuml-preview",
+        "esbenp.prettier-vscode",
+        "jebbs.plantuml"
+    ]
 }
