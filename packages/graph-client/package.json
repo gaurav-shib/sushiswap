@@ -53,12 +53,12 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "pnpm build:types && pnpm build:compile",
+    "build": "node init && pnpm build:types && pnpm build:compile",
     "build:compile": "tsc && tsc-alias -p tsconfig.json",
     "build:types": "rm -rf src/subgraphs/*/*.d.ts && gql.tada generate output && gql.tada turbo",
     "check": "pnpm build:types && tsc --pretty --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsc --watch",
+    "dev": "node init && tsc --watch",
     "prepublishOnly": "pnpm build",
     "update-data-api-types": "tsx scripts/update-data-api-types.ts",
     "update-schemas": "tsx scripts/update-schemas.ts"

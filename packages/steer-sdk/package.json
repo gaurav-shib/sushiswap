@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "description": "Sushi Steer SDK",
-  "keywords": ["sushi", "steer"],
+  "keywords": [
+    "sushi",
+    "steer"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sushiswap/sushiswap.git",
@@ -30,17 +33,23 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
-      ".": ["src/index"],
-      "abi": ["src/abi/index"]
+      ".": [
+        "src/index"
+      ],
+      "abi": [
+        "src/abi/index"
+      ]
     }
   },
   "typings": "dist/index.d.ts",
-  "files": ["dist/**"],
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "check": "tsc --pretty --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsc --watch",
+    "dev": "node init && tsc --watch",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {

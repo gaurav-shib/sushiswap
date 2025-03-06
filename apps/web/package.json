@@ -4,14 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "node init && next build",
     "check": "tsc --pretty --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next && rm -rf .swc",
-    "dev": "next dev --turbopack",
+    "dev": "node init && next dev --turbopack",
     "generate-swaps": "tsx test/swap/scripts/generate-swaps.ts",
     "lint": "TIMING=1 next lint",
     "lint:fix": "TIMING=1 next lint --fix",
-    "start": "next start",
+    "start": "node init && next start",
     "test": "npx playwright test -c test/playwright.config.ts",
     "test:unit": "vitest --watch=false src"
   },

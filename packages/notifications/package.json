@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "description": "Sushi Notifications",
-  "keywords": ["sushi", "notification"],
+  "keywords": [
+    "sushi",
+    "notification"
+  ],
   "homepage": "https://www.sushi.com",
   "repository": {
     "type": "git",
@@ -24,15 +27,20 @@
   },
   "typesVersions": {
     "*": {
-      "*": ["src/*", "src/*/index"]
+      "*": [
+        "src/*",
+        "src/*/index"
+      ]
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "check": "tsc --pretty --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsc --watch"
+    "dev": "node init && tsc --watch"
   },
   "dependencies": {
     "@heroicons/react": "2.0.13",

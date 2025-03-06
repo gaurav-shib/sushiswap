@@ -10,4 +10,4 @@ const tailwindConfig = {
   },
 }
 
-export default tailwindConfig
+export default tailwindConfig;

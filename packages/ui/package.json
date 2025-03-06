@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "description": "Sushi UI",
-  "keywords": ["sushi", "ui", "react", "components"],
+  "keywords": [
+    "sushi",
+    "ui",
+    "react",
+    "components"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sushi-labs/sushiswap.git",
@@ -11,7 +16,9 @@
   },
   "license": "MIT",
   "author": "Matthew Lilley <hello@matthewLilley.com>",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "exports": {
     "./index.css": "./index.css",
     "./date-picker.css": "./date-picker.css",
@@ -29,16 +36,25 @@
   },
   "typesVersions": {
     "*": {
-      ".": ["src/**/*"],
-      "./icons/*": ["src/icons/*"]
+      ".": [
+        "src/**/*"
+      ],
+      "./icons/*": [
+        "src/icons/*"
+      ]
     }
   },
-  "files": ["dist", "index.css", "date-picker.css", "tailwind.js"],
+  "files": [
+    "dist",
+    "index.css",
+    "date-picker.css",
+    "tailwind.js"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "check": "tsc --pretty --noEmit",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "dev": "tsc --watch"
+    "dev": "node init && tsc --watch"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.0.1",
