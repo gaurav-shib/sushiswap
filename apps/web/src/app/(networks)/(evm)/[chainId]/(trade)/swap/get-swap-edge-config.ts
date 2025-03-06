@@ -5,7 +5,8 @@ interface SwapEdgeConfig {
 }
 
 const getSwapEdgeConfig = async () => {
-  return get<SwapEdgeConfig>('swap')
+  // Return default config without using Vercel Edge Config
+  return { maintenance: false } as SwapEdgeConfig
 }
 
 export { type SwapEdgeConfig, getSwapEdgeConfig }
