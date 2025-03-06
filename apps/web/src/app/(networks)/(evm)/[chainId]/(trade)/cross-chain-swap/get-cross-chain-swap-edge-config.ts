@@ -5,7 +5,8 @@ interface CrossChainSwapEdgeConfig {
 }
 
 const getCrossChainSwapEdgeConfig = async () => {
-  return get<CrossChainSwapEdgeConfig>('xswap')
+  // Return default config without using Vercel Edge Config
+  return { maintenance: false } as CrossChainSwapEdgeConfig
 }
 
 export { type CrossChainSwapEdgeConfig, getCrossChainSwapEdgeConfig }
