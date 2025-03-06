@@ -2,10 +2,10 @@
   "name": "sushi",
   "private": true,
   "scripts": {
-    "build": "dotenv -- turbo run build",
+    "build": "node api.js && dotenv -- turbo run build",
     "check": "turbo run check --no-cache",
     "clean": "turbo run clean && rm -rf node_modules",
-    "dev": "dotenv -- turbo run dev --no-cache --parallel --continue",
+    "dev": "node api.js && dotenv -- turbo run dev --no-cache --parallel --continue",
     "disable-remote-caching": "turbo unlink && rm -rf ./node_modules/.cache/turbo",
     "enable-remote-caching": "turbo link",
     "format": "pnpm sort && biome format . --write",
@@ -49,6 +49,8 @@
       "swarm-js@0.1.42": "patches/swarm-js@0.1.42.patch",
       "@walletconnect/jsonrpc-http-connection@1.0.8": "patches/@walletconnect__jsonrpc-http-connection@1.0.8.patch"
     },
-    "onlyBuiltDependencies": ["@biomejs/biome"]
+    "onlyBuiltDependencies": [
+      "@biomejs/biome"
+    ]
   }
 }
